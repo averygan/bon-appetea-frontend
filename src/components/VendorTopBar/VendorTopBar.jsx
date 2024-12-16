@@ -9,7 +9,7 @@ function VendorTopBar({ id }) {
 
     return (
         <div className="bg-white py-3 my-2">
-            {/* Container for back button, logo, cart */}
+            {/* container for back button, logo, cart */}
             <div className="flex items-center justify-between">
                 {/* back */}
                 <Link to="/" className="flex items-center">
