@@ -16,6 +16,8 @@ import AccountPage from './views/AccountPage'
 import NotFoundPage from './views/NotFoundPage'
 import VendorPage from './views/VendorPage'
 import CartPage from './views/CartPage';
+import DealsListPage from './views/DealsListPage';
+import DealsMapPage from './views/DealsMapPage';
 import VendorContextProvider from './contexts/VendorContext';
 import DishContextProvider from './contexts/DishContext';
 
@@ -34,6 +36,8 @@ function App() {
               <Route path="/search" element={<SearchPage/>}/>
               <Route path="/cart" element={<CartPage/>}/>
               <Route path="/account" element={<AccountPage/>}/>
+              <Route path="/deals" element={<DealsListPage/>}/>
+              <Route path="/deals/map" element={<DealsMapPage/>}/>
               <Route path="*" element={<NotFoundPage/>} />
             </Routes>
           </DataContextProvider>
