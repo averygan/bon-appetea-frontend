@@ -18,25 +18,31 @@ import VendorPage from './views/VendorPage'
 import CartPage from './views/CartPage';
 import DealsListPage from './views/DealsListPage';
 import DealsMapPage from './views/DealsMapPage';
+import VendorContextProvider from './contexts/VendorContext';
+import DishContextProvider from './contexts/DishContext';
 
 function App() {
 
   return (
     <Router>
       <LocationContextProvider>
-        <DataContextProvider>
-          <Routes>
-            <Route path="/" element={<FoodPage/>}/>
-            <Route path="/vendor/:vendor_id" element={<VendorPage/>}/>
-            <Route path="/grocery" element={<GroceryPage/>}/>
-            <Route path="/search" element={<SearchPage/>}/>
-            <Route path="/cart" element={<CartPage/>}/>
-            <Route path="/account" element={<AccountPage/>}/>
-            <Route path="/deals" element={<DealsListPage/>}/>
-            <Route path="/deals/map" element={<DealsMapPage/>}/>
-            <Route path="*" element={<NotFoundPage/>} />
-          </Routes>
-        </DataContextProvider>
+        <VendorContextProvider>
+        <DishContextProvider>
+          <DataContextProvider>
+            <Routes>
+              <Route path="/" element={<FoodPage/>}/>
+              <Route path="/vendor/:vendor_id" element={<VendorPage/>}/>
+              <Route path="/grocery" element={<GroceryPage/>}/>
+              <Route path="/search" element={<SearchPage/>}/>
+              <Route path="/cart" element={<CartPage/>}/>
+              <Route path="/account" element={<AccountPage/>}/>
+              <Route path="/deals" element={<DealsListPage/>}/>
+              <Route path="/deals/map" element={<DealsMapPage/>}/>
+              <Route path="*" element={<NotFoundPage/>} />
+            </Routes>
+          </DataContextProvider>
+          </DishContextProvider>
+        </VendorContextProvider>
       </LocationContextProvider>
     </Router>
   )

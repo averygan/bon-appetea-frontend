@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { DataContext } from '../../contexts/DataContext';
 import DishCard from '../DishCard/DishCard'; 
 import { FaFire } from 'react-icons/fa6';
+import { DishContext } from '../../contexts/DishContext';
 
 function VendorDishes({ id }) {
-  const { dishes } = useContext(DataContext);
-  const filteredDishes = dishes?.filter(dish => dish.vendor_id === id) || [];
+  const { dishes } = useContext(DishContext)
+
+  const filteredDishes = dishes?.filter(dish => ("vn" + dish.vendorID) === id) || [];
 
   return (
     <div>
