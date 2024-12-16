@@ -1,0 +1,47 @@
+#bottomNavBar {
+    border-top: 1px solid #DCDCDC;
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    padding: 15px 0 30px 0;
+    background-color: #FFFFFF;
+}
+
+#bottomNavBar ul {
+    display: flex;
+    margin: auto;
+    list-style-type: none;
+    width: 90%;
+}
+
+#bottomNavBar li {
+    flex: 1;
+}
+
+#bottomNavBar li a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6B7680;
+}
+
+#bottomNavBar li a svg{
+    font-size: 1.4em;
+    margin-bottom: 0.2em;
+    transform-origin: center center;
+    transition: transform 0.1s;
+    transform: scale(1);
+}
+
+#bottomNavBar li a p{
+    font-size: 0.74em;
+}
+
+#bottomNavBar li:active a svg{
+    transform: scale(0.8);
+}
+
+#bottomNavBar li a.active{
+    color: #F70170;
+}
