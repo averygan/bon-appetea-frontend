@@ -20,14 +20,32 @@ export const capitalize = (sentence) => {
 /**
  * Calculates the highest discount offered by each vendor
  * @param {array} dishes array of dishes (for each vendor)
+ * @param {int} vendorID ID of each vendor
  * @returns {float} highest discount (in decimal)
  */
-export const calcMaxDiscount = (dishes) => {
-    const max = 0;
-    for (let eachDish of dishes) {
+export const calcMaxDiscount = (dishes, vendorID) => {
+    let eachVendorDishes = getVendorDishes(dishes, vendorID)
+    let max = 0;
+    for (let eachDish of eachVendorDishes) {
         if (eachDish.discount > max) {
             max = eachDish.discount
         }
     }
     return max
+}
+
+/**
+ * Retrieves all dishes of a particular vendor
+ * @param {array} dishes array of dishes for all vendor
+ * @param {int} vendorID ID of each vendor
+ * @returns {array} All dishes of the particular vendor
+ */
+export const getVendorDishes = (dishes, vendorID) => {
+    let eachVendorDishes = []
+    for (let eachDish of dishes) {
+        if (eachDish.vendorID == vendorID) {
+            eachVendorDishes.push(eachDish)
+        }
+    }
+    return eachVendorDishes
 }

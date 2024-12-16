@@ -6,6 +6,7 @@ import { Icon } from 'leaflet';
 import { VendorContext } from '../../contexts/VendorContext';
 import { DataContext } from '../../contexts/DataContext';
 import { DishContext } from '../../contexts/DishContext';
+import { calcMaxDiscount } from '../../utils/utils';
 
 function DealsMap() {
     const LEAFLET_ACCESS_TOKEN = import.meta.env.VITE_LEAFLET_ACCESS_TOKEN
@@ -32,9 +33,10 @@ function DealsMap() {
         </Marker>
         { vendors.length > 0 && 
             vendors.map(vendor => (
-                <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]}>
+                <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]} icon={customIcon(`discounts-${calcMaxDiscount(dishes, vendor.id)}`)}>
                     <Popup>
                         <h1>{vendor.name}</h1>
+                        <p>{calcMaxDiscount(dishes, vendor.id)}</p>
                     </Popup>
                 </Marker>
             ))
