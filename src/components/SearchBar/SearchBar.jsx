@@ -3,7 +3,8 @@ import { IoSearch } from 'react-icons/io5';
 
 function SearchBar({placeholder, bgColor}) {
   return (
-    <div className={`relative flex items-center w-full bg-[${bgColor}] border-none rounded-3xl`}>
+    <div className={`relative flex items-center w-full border-none rounded-3xl`}
+          style={{backgroundColor: bgColor}}>
       <IoSearch className="ml-3 text-[#505153]" />
       <input
         type="text"

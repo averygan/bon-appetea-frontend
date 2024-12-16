@@ -9,7 +9,8 @@ function LocationBar({color}) {
   let { location } = useContext(LocationContext)
 
   return (
-    <section className={`${styles["LocationBar"]} text-[${color}]`}>
+    <section className={`${styles["LocationBar"]}`}
+            style={{color: color}}>
         <div className={styles["locLeft"]}>
           <GrLocation/>
           <div>
