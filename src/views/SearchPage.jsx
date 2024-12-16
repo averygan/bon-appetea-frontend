@@ -1,8 +1,11 @@
 import React from 'react'
+import BottomNavBar from '../components/BottomNavBar/BottomNavBar'
 
 function SearchPage() {
   return (
-    <div>SearchPage</div>
+    <>
+      <BottomNavBar/>
+    </>
   )
 }
 
