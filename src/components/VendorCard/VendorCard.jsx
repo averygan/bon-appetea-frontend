@@ -8,11 +8,9 @@ import { VendorContext } from '../../contexts/VendorContext'
 
 function VendorCard({text}) {
     const { vendors } = useContext(VendorContext)
-    console.log(vendors)
 
   return (
     <section className={styles["vendorSection"]}>
-        {console.log(vendors)}
         <h1>{text}</h1>
         {vendors.map(
             vendor => (
