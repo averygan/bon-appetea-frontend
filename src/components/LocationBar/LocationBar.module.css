@@ -16,6 +16,7 @@
 
 .LocationBar .locLeft h1 {
     font-size: 1em;
+    font-weight: bold;
 }
 
 .LocationBar .locLeft p {
