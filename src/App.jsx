@@ -16,6 +16,7 @@ import AccountPage from './views/AccountPage'
 import NotFoundPage from './views/NotFoundPage'
 import VendorPage from './views/VendorPage'
 import CartPage from './views/CartPage';
+import DealsListPage from './views/DealsListPage';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/search" element={<SearchPage/>}/>
             <Route path="/cart" element={<CartPage/>}/>
             <Route path="/account" element={<AccountPage/>}/>
+            <Route path="/deals" element={<DealsListPage/>}/>
             <Route path="*" element={<NotFoundPage/>} />
           </Routes>
         </DataContextProvider>
