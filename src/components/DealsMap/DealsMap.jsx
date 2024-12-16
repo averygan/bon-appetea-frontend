@@ -4,11 +4,14 @@ import { LocationContext } from '../../contexts/LocationContext'
 import "leaflet/dist/leaflet.css";
 import { Icon } from 'leaflet';
 import { VendorContext } from '../../contexts/VendorContext';
+import { DataContext } from '../../contexts/DataContext';
+import { DishContext } from '../../contexts/DishContext';
 
 function DealsMap() {
     const LEAFLET_ACCESS_TOKEN = import.meta.env.VITE_LEAFLET_ACCESS_TOKEN
     let { location } = useContext(LocationContext)
     let { vendors } = useContext(VendorContext)
+    let { dishes } = useContext(DishContext)
     let userPosition = [location.lat, location.lng]
 
     const customIcon = (entity) => {
@@ -27,14 +30,15 @@ function DealsMap() {
         <Marker position={userPosition} icon={customIcon("user")}>
             <Popup>You are here!</Popup>
         </Marker>
-        {
+        { vendors.length > 0 && 
             vendors.map(vendor => (
-                <Marker key={vendor.id}>
+                <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]}>
                     <Popup>
-                        <h1>vendor.name</h1>
+                        <h1>{vendor.name}</h1>
                     </Popup>
                 </Marker>
             ))
+
         }
     </MapContainer>
   )
