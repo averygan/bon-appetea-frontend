@@ -4,6 +4,7 @@ import ShopTopBar from '../components/ShopTopBar/ShopTopBar'
 import FilterBar from '../components/FilterBar/FilterBar'
 import BottomNavBar from '../components/BottomNavBar/BottomNavBar'
 import VendorCard from '../components/VendorCard/VendorCard'
+import BottomBanner from '../components/BottomBanner/BottomBanner'
 
 function FoodPage() {
   return (
@@ -12,7 +13,7 @@ function FoodPage() {
       <HomeBanner/>
       <FilterBar/>
       <VendorCard/>
-      <div>Bottom Banner</div>
+      <BottomBanner text="Tap here for more info"/>
       <BottomNavBar/>
     </>
   )
