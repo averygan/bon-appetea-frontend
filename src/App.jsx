@@ -17,6 +17,7 @@ import NotFoundPage from './views/NotFoundPage'
 import VendorPage from './views/VendorPage'
 import CartPage from './views/CartPage';
 import DealsListPage from './views/DealsListPage';
+import DealsMapPage from './views/DealsMapPage';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/cart" element={<CartPage/>}/>
             <Route path="/account" element={<AccountPage/>}/>
             <Route path="/deals" element={<DealsListPage/>}/>
+            <Route path="/deals/map" element={<DealsMapPage/>}/>
             <Route path="*" element={<NotFoundPage/>} />
           </Routes>
         </DataContextProvider>

@@ -13,7 +13,7 @@ function FoodPage() {
       <HomeBanner/>
       <FilterBar/>
       <VendorCard/>
-      <BottomBanner text="Tap here for more info" mb="90px"/>
+      <BottomBanner text="Tap here for more info" endpoint="/deals" mb="90px"/>
       <BottomNavBar/>
     </>
   )
