@@ -1,0 +1,84 @@
+.vendorSection {
+    padding: 0 3vw;
+    background-color: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+}
+
+.vendorSection h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.vendorCard {
+    border-radius: 10px;
+    border: 1px solid #DCDCDC;
+    margin: 15px 0;
+}
+
+.vendorCard section {
+    padding: 3vw;
+}
+
+.vendorCard img {
+    object-fit: cover;
+    height: 20vh;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.vendorTitle {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.vendorTitle svg {
+    color: #F6AD14;
+    display: flex;
+    align-items: center;
+}
+
+.vendorTitle h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.vendorTitle div {
+    display: flex;
+    align-items: center;
+}
+
+.vendorTitle p {
+    margin-left: 5px;
+    font-size: 0.9rem;
+
+}
+
+.vendorTitle p span {
+    color: #727272;
+}
+
+.vendorTags,
+.vendorDelivery,
+.vendorDelivery span {
+    color: #8E8E8E;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.vendorDelivery .active {
+   color: #F80070;
+}
+
+.vendorDelivery .active p {
+    font-weight: bold;
+}
+
+.vendorDelivery svg {
+    margin-right: 3px;
+    margin-left: 3px;
+}
