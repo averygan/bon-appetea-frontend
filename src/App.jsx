@@ -31,7 +31,7 @@ function App() {
           <DataContextProvider>
             <Routes>
               <Route path="/" element={<FoodPage/>}/>
-              <Route path="/vendor/:vendor_id" element={<VendorPage/>}/>
+              <Route path="/vendors/:vendorID" element={<VendorPage/>}/>
               <Route path="/grocery" element={<GroceryPage/>}/>
               <Route path="/search" element={<SearchPage/>}/>
               <Route path="/cart" element={<CartPage/>}/>

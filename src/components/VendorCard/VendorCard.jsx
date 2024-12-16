@@ -3,13 +3,12 @@ import styles from './VendorCard.module.css'
 import { FaStar } from 'react-icons/fa'
 import { IoMdTime } from 'react-icons/io'
 import { MdPedalBike } from 'react-icons/md'
-import { DataContext } from '../../contexts/DataContext'
 import { Link } from 'react-router-dom'
 import { VendorContext } from '../../contexts/VendorContext'
 
 function VendorCard({text}) {
-    // const {vendors} = useContext(DataContext)
     const { vendors } = useContext(VendorContext)
+    console.log(vendors)
 
   return (
     <section className={styles["vendorSection"]}>
@@ -17,7 +16,7 @@ function VendorCard({text}) {
         <h1>{text}</h1>
         {vendors.map(
             vendor => (
-                <Link key={vendor.id} to={"/vendor/" + vendor.id}>
+                <Link key={vendor.id} to={"/vendors/" + vendor.id}>
                     <article className={styles["vendorCard"]}>
                         <img src={vendor.listing + "?width=400&height=225"} alt={vendor.name} loading="lazy"/>
                         <section>

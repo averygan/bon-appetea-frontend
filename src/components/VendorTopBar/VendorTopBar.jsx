@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import { DataContext } from '../../contexts/DataContext';
+// import { DataContext } from '../../contexts/DataContext';
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import CartButton from '../CartButton/CartButton';
+import { VendorContext } from '../../contexts/VendorContext';
 
 function VendorTopBar({ id }) {
-    const { vendors } = useContext(DataContext);
-    const vendor = vendors.find(vendor => vendor.id === id);
+    const { vendors } = useContext(VendorContext)
+
+    const vendor = vendors.find(vendor => String(vendor.id) === String(id))
 
     return (
         <div className="bg-white py-3 my-2">
