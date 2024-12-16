@@ -8,7 +8,7 @@ function DealsListPage() {
     <>
         <DealsBanner/>
         <VendorCard/>
-        <BottomBanner text="Tap here for map view"/>
+        <BottomBanner text="Tap here for map view" bgColor="#ffffff"/>
     </>
   )
 }
