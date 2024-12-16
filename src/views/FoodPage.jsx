@@ -12,7 +12,7 @@ function FoodPage() {
       <ShopTopBar bgColor="#F70170" locColor="#FFFFFF" searchColor="#FFFFFF"/>
       <HomeBanner/>
       <FilterBar/>
-      <VendorCard/>
+      <VendorCard text="Explore restaurants"/>
       <BottomBanner text="Tap here for more info" endpoint="/deals" mb="90px"/>
       <BottomNavBar/>
     </>
