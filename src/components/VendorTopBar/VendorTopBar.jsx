@@ -38,10 +38,10 @@ function VendorTopBar({ id }) {
                 <div className="mt-2 text-center">
                     <h1 className="text-sm font-bold">{vendor.name}</h1>
                     <div className="flex justify-center mt-1 items-center text-xs text-gray-500">
-                        <span className="mr-2">{vendor.deliveryTime}</span>
+                        <span>{vendor.deliveryTime}</span>
                         <span className="mx-1">•</span>
                         <span className="text-pink-500 font-medium">
-                            {vendor.deliveryFee === 0 ? 'Free delivery' : `$${vendor.deliveryFee}`}
+                            {vendor.deliveryFee === "0" ? 'Free delivery' : `$${vendor.deliveryFee}`}
                         </span>
                         <span className="mx-1">•</span>
                         <span className="text-yellow-500 font-medium">{vendor.ratings}</span>
