@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { DataContext } from '../../contexts/DataContext';
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import CartButton from '../CartButton/CartButton';
 
 function VendorTopBar({ id }) {
     const { vendors } = useContext(DataContext);
@@ -27,7 +28,7 @@ function VendorTopBar({ id }) {
                     </div>
                 )}
 
-                {/* TODO: cart */}
+                <CartButton/>
             </div>
 
             {/* vendor information */}

@@ -1,8 +1,12 @@
 import React from 'react'
+import { TbShoppingBag } from 'react-icons/tb'
+import { Link } from 'react-router-dom'
 
 function CartButton() {
   return (
-    <div>CartButton</div>
+    <Link to="/cart">
+        <TbShoppingBag className="text-2xl" />
+    </Link> 
   )
 }
 
