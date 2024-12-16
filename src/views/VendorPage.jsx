@@ -10,7 +10,7 @@ function VendorPage() {
   return (
     <div className="px-4">
       <VendorTopBar id={vendorID}/>
-      <SearchBar placeholder="Search" bgColor="bg-gray-100"/>
+      <SearchBar placeholder="Search" bgColor="#F0F0F0"/>
       <VendorDishes id={vendorID}/>
     </div>
   )
