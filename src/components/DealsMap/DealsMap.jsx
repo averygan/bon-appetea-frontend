@@ -3,10 +3,12 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { LocationContext } from '../../contexts/LocationContext'
 import "leaflet/dist/leaflet.css";
 import { Icon } from 'leaflet';
+import { VendorContext } from '../../contexts/VendorContext';
 
 function DealsMap() {
     const LEAFLET_ACCESS_TOKEN = import.meta.env.VITE_LEAFLET_ACCESS_TOKEN
     let { location } = useContext(LocationContext)
+    let { vendors } = useContext(VendorContext)
     let userPosition = [location.lat, location.lng]
 
     const customIcon = (entity) => {
@@ -25,6 +27,15 @@ function DealsMap() {
         <Marker position={userPosition} icon={customIcon("user")}>
             <Popup>You are here!</Popup>
         </Marker>
+        {
+            vendors.map(vendor => (
+                <Marker key={vendor.id}>
+                    <Popup>
+                        <h1>vendor.name</h1>
+                    </Popup>
+                </Marker>
+            ))
+        }
     </MapContainer>
   )
 }
