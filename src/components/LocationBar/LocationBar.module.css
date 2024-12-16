@@ -1,0 +1,27 @@
+.LocationBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.LocationBar .locLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.LocationBar .locLeft svg {
+    margin-right: 2vw;
+}
+
+.LocationBar .locLeft h1 {
+    font-size: 1em;
+}
+
+.LocationBar .locLeft p {
+    font-size: 0.8em;
+}
+
+.LocationBar svg {
+    font-size: 1.4em;
+}
