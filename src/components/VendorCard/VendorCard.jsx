@@ -5,12 +5,15 @@ import { IoMdTime } from 'react-icons/io'
 import { MdPedalBike } from 'react-icons/md'
 import { DataContext } from '../../contexts/DataContext'
 import { Link } from 'react-router-dom'
+import { VendorContext } from '../../contexts/VendorContext'
 
 function VendorCard({text}) {
-    const {vendors} = useContext(DataContext)
+    // const {vendors} = useContext(DataContext)
+    const { vendors } = useContext(VendorContext)
 
   return (
     <section className={styles["vendorSection"]}>
+        {console.log(vendors)}
         <h1>{text}</h1>
         {vendors.map(
             vendor => (
@@ -25,8 +28,7 @@ function VendorCard({text}) {
                                 </div>    
                             </div>
                             <div className={styles["vendorTags"]}>
-                                {vendor.price} • {vendor.cuisine[0]} 
-                                {vendor.dietary.length> 0 && ` • ${vendor.dietary[0]}`}
+                                {vendor.price} • {vendor.cuisine} 
                             </div>
                             <div className={styles["vendorDelivery"]}> 
                                 <IoMdTime />{vendor.deliveryTime} &#8226;  
