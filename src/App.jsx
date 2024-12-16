@@ -14,21 +14,24 @@ import SearchPage from './views/SearchPage'
 import AccountPage from './views/AccountPage'
 import NotFoundPage from './views/NotFoundPage'
 import VendorPage from './views/VendorPage'
+import LocationContextProvider from './contexts/LocationContext';
 
 function App() {
 
   return (
     <Router>
-      <DataContextProvider>
-        <Routes>
-          <Route path="/" element={<FoodPage/>}/>
-          <Route path="/vendor/:vendor_id" element={<VendorPage/>}/>
-          <Route path="/grocery" element={<GroceryPage/>}/>
-          <Route path="/search" element={<SearchPage/>}/>
-          <Route path="/account" element={<AccountPage/>}/>
-          <Route path="*" element={<NotFoundPage/>} />
-        </Routes>
-      </DataContextProvider>
+      <LocationContextProvider>
+        <DataContextProvider>
+          <Routes>
+            <Route path="/" element={<FoodPage/>}/>
+            <Route path="/vendor/:vendor_id" element={<VendorPage/>}/>
+            <Route path="/grocery" element={<GroceryPage/>}/>
+            <Route path="/search" element={<SearchPage/>}/>
+            <Route path="/account" element={<AccountPage/>}/>
+            <Route path="*" element={<NotFoundPage/>} />
+          </Routes>
+        </DataContextProvider>
+      </LocationContextProvider>
     </Router>
   )
 }
