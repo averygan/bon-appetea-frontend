@@ -4,9 +4,13 @@ import { LocationContext } from '../../contexts/LocationContext'
 import "leaflet/dist/leaflet.css";
 import { Icon } from 'leaflet';
 import { VendorContext } from '../../contexts/VendorContext';
-import { DataContext } from '../../contexts/DataContext';
+import styles from './DealsMap.module.css'
 import { DishContext } from '../../contexts/DishContext';
 import { calcMaxDiscount } from '../../utils/utils';
+import { Link } from 'react-router-dom';
+import { IoMdTime } from 'react-icons/io';
+import { MdPedalBike } from 'react-icons/md';
+import { FaStar } from 'react-icons/fa';
 
 function DealsMap() {
     const LEAFLET_ACCESS_TOKEN = import.meta.env.VITE_LEAFLET_ACCESS_TOKEN
@@ -29,15 +33,50 @@ function DealsMap() {
         url={"https://tile.jawg.io/jawg-terrain/{z}/{x}/{y}{r}.png?access-token=" + LEAFLET_ACCESS_TOKEN}
         />
         <Marker position={userPosition} icon={customIcon("user")}>
-            <Popup>You are here!</Popup>
+                <Popup>
+                    <div className={styles["popupContentWrapper"]}> 
+                        <section className={styles["popupContent"]}>You are here</section>
+                    </div>
+                </Popup>
         </Marker>
         { vendors.length > 0 && 
             vendors.map(vendor => (
                 <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]} icon={customIcon(`discounts-${calcMaxDiscount(dishes, vendor.id)}`)}>
                     <Popup>
-                        <h1>{vendor.name}</h1>
-                        <p>{calcMaxDiscount(dishes, vendor.id)}</p>
-                    </Popup>
+                            <Link className={styles["popupContentWrapper"]} to={`/vendor/${vendor.id}`}>
+                                    <img src={vendor.listing + "?width=400&height=225"} alt={vendor.name}/>
+                                    <section>
+                                        <div className={styles["popupContentHeader"]}>
+                                            <h1>
+                                                {calcMaxDiscount(dishes, vendor.id) > 0 ?
+                                                <span className={styles["active"]}>{calcMaxDiscount(dishes, vendor.id)*100}% off </span> :
+                                                <span>No </span>
+                                                }
+                                                closing deal
+                                            </h1>
+                                            <div>
+                                                <FaStar /> <p>{vendor.ratings} <span>({vendor.noOfReviews})</span></p>
+                                            </div>    
+                                        </div>
+                                        <div className={styles["popupContentName"]}>
+                                            @ {vendor.name}
+                                        </div>
+                                        <div className={styles["popupContentDelivery"]}>
+                                            {vendor.cuisine} &#8226;
+                                            <IoMdTime />{vendor.deliveryTime} &#8226;  
+                                            {vendor.deliveryFee === 0 ? 
+                                            <span className={styles["active"]}>
+                                                <MdPedalBike /> <p>Free</p>
+                                            </span>
+                                            : 
+                                            <span>
+                                                <MdPedalBike />
+                                                <p>{"S$" + vendor.deliveryFee}</p>
+                                            </span>}
+                                        </div>
+                                    </section>
+                                </Link>
+                            </Popup>
                 </Marker>
             ))
 

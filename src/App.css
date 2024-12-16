@@ -8,3 +8,20 @@
     box-sizing: border-box;
     font-family: "Noto Sans", sans-serif;
 }
+
+.leaflet-popup-content-wrapper {
+    padding: 0 !important; 
+    border-radius: 20px !important;
+}
+
+.leaflet-popup-content {
+    margin: 0 !important;
+    width: auto !important;
+}
+
+.leaflet-popup-close-button {
+    color: black !important;
+    text-shadow: 0 4px 4px #FFFFFF;
+    font-size: 2rem !important;
+    margin: 10px;
+}
