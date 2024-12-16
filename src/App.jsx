@@ -1,5 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// global styles
 import './App.css'
+
+// routing
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// views
 import FoodPage from './views/FoodPage'
 import GroceryPage from './views/GroceryPage'
 import SearchPage from './views/SearchPage'
