@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 // import { DataContext } from '../../contexts/DataContext';
 import { IoArrowBackOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CartButton from '../CartButton/CartButton';
 import { VendorContext } from '../../contexts/VendorContext';
 
 function VendorTopBar({ id }) {
     const { vendors } = useContext(VendorContext)
+    const navigate = useNavigate();
 
     const vendor = vendors.find(vendor => String(vendor.id) === String(id))
 
@@ -15,9 +16,9 @@ function VendorTopBar({ id }) {
             {/* container for back button, logo, cart */}
             <div className="flex items-center justify-between">
                 {/* back */}
-                <Link to="/" className="flex items-center">
+                <button onClick={() => navigate(-1)} className="flex items-center">
                     <IoArrowBackOutline className="text-2xl" />
-                </Link>
+                </button>
 
                 {/* vendor logo */}
                 {vendor && (
