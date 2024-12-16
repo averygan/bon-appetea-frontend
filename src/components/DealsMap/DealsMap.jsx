@@ -35,7 +35,7 @@ function DealsMap() {
         <Marker position={userPosition} icon={customIcon("user")}>
                 <Popup>
                     <div className={styles["popupContentWrapper"]}> 
-                        <section className={styles["popupContent"]}>You are here</section>
+                        <section className={`${styles["popupContent"]} text-lg`}>You are here</section>
                     </div>
                 </Popup>
         </Marker>
@@ -71,7 +71,7 @@ function DealsMap() {
                                             : 
                                             <span>
                                                 <MdPedalBike />
-                                                <p>{"S$" + vendor.deliveryFee}</p>
+                                                <p>{"S$" + vendor.deliveryFee.toFixed(2)}</p>
                                             </span>}
                                         </div>
                                     </section>
