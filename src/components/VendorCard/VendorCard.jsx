@@ -13,7 +13,6 @@ function VendorCard({text}) {
 
   return (
     <section className={styles["vendorSection"]}>
-        {console.log(vendors)}
         <h1>{text}</h1>
         {vendors.map(
             vendor => (
