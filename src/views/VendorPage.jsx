@@ -9,7 +9,7 @@ function VendorPage() {
     const [query, setQuery] = useState('');
 
   return (
-    <div className="px-4">
+    <div className="px-4 flex flex-col h-screen">
       <VendorTopBar id={vendorID}/>
       <SearchBar placeholder="Search" bgColor="#F0F0F0" setQuery={setQuery} query={query}/>
       <VendorDishes id={vendorID} searchQuery={query}/>

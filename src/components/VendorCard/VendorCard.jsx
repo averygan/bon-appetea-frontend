@@ -14,11 +14,11 @@ function VendorCard({ text, query = "" }) {
     : vendors;
 
   return (
-    <section className={styles["vendorSection"]}>
+    <section className={`${styles["vendorSection"]} flex-1 flex flex-col justify-center`} >
       <h1>{text}</h1>
       {filteredVendors.length > 0 ? (
         filteredVendors.map(vendor => (
-          <Link key={vendor.id} to={"/vendors/" + vendor.id}>
+          <Link className="flex-1" key={vendor.id} to={"/vendors/" + vendor.id}>
             <article className={styles["vendorCard"]}>
               <img 
                 src={`${vendor.listing}?width=400&height=225`} 
@@ -52,11 +52,12 @@ function VendorCard({ text, query = "" }) {
           </Link>
         ))
       ) : (
-        <div className="col-span-full text-center mt-10">
+        <div className="col-span-full text-center mt-10 flex-1 flex flex-col justify-center pb-[40px]">
           <img 
             src="/assets/images/paupau-wink.png" 
             alt="Pau pau winking" 
             className="mx-auto w-40 h-40 object-contain" 
+            loading= "lazy"
           />
           <p className="text-gray-500 mt-4 text-base">No restaurants found, try again</p>
         </div>

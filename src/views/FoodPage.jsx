@@ -10,7 +10,7 @@ function FoodPage() {
   const [query, setQuery] = useState('');
 
   return (
-    <>
+    <main className="flex flex-col h-screen">
       <ShopTopBar bgColor="#F70170" locColor="#FFFFFF" searchColor="#FFFFFF" setQuery={setQuery} query={query}/>
       <HomeBanner/>
       <FilterBar/>
@@ -19,7 +19,7 @@ function FoodPage() {
         <>Save <span className="text-pink-600">50% off</span> closing deals</>
       </BottomBanner>
       <BottomNavBar/>
-    </>
+    </main>
   )
 }
 
