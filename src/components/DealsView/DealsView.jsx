@@ -4,10 +4,10 @@ import DealsMap from '../DealsMap/DealsMap';
 
 function DealsView({ view }) {
   return (
-    <div>
+    <div className="border-t-2 border-gray-200">
       {view === "list" ? (
         <>
-          <VendorCard loadBadge={true}/>
+          <VendorCard loadBadge={true} shuffle={true}/>
         </>
       ) : (
         <div className="flex flex-col h-screen">

@@ -6,24 +6,24 @@ function ToggleSwitch({ selected, setSelected }) {
   };
 
   return (
-    <div className="flex px-2 border-b border-gray-300 py-2 mx-auto">
-      <button
-        onClick={() => handleToggle('list')}
-        className={`w-1/2 text-center py-1 text-base font-bold ${
-          selected === 'list' ? 'bg-white text-bold' : 'text-gray-500'
-        }`}
-      >
-        List
-      </button>
-      <button
-        onClick={() => handleToggle('map')}
-        className={`w-1/2 text-center py-1 text-base font-bold ${
-          selected === 'map' ? 'bg-white text-bold' : 'text-gray-500'
-        }`}
-      >
-        Map
-      </button>
-    </div>
+  <div className="flex px-2 py-2 mx-auto justify-between mx-[21vw]">
+    <button
+      onClick={() => handleToggle('list')}
+      className={`text-center py-1 text-base font-bold relative ${
+        selected === 'list' ? 'bg-white text-bold border-b-2 border-black' : 'text-gray-500'
+      }`}
+    >
+      List
+    </button>
+    <button
+      onClick={() => handleToggle('map')}
+      className={`text-center py-1 text-base font-bold relative ${
+        selected === 'map' ? 'bg-white text-bold border-b-2 border-black' : 'text-gray-500'
+      }`}
+    >
+      Map
+    </button>
+  </div>
   );
 }
 
