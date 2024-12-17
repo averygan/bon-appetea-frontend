@@ -16,7 +16,6 @@ import AccountPage from './views/AccountPage'
 import NotFoundPage from './views/NotFoundPage'
 import VendorPage from './views/VendorPage'
 import CartPage from './views/CartPage';
-import DealsMapPage from './views/DealsMapPage';
 import VendorContextProvider from './contexts/VendorContext';
 import DishContextProvider from './contexts/DishContext';
 import DealsPage from './views/DealsPage';

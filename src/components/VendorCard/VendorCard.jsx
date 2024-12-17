@@ -1,4 +1,4 @@
-import { React, useContext } from 'react';
+import { React, useContext, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { IoMdTime } from 'react-icons/io';
 import { MdPedalBike } from 'react-icons/md';
@@ -7,15 +7,27 @@ import { DishContext } from '../../contexts/DishContext';
 import { VendorContext } from '../../contexts/VendorContext';
 import styles from './VendorCard.module.css';
 import Badge from '../Badge/Badge';
-import { calcMaxDiscount } from '../../utils/utils';
+import { calcMaxDiscount, fisherYatesShuffle } from '../../utils/utils';
 
-function VendorCard({ text, query = "", loadBadge }) {
+function VendorCard({ text, query = "", loadBadge, shuffle=false }) {
   const { vendors } = useContext(VendorContext);
   const { dishes } = useContext(DishContext)
+  let [vendorsState, setVendors] = useState([])
+
+    // Shuffle vendors when shuffle prop is true
+    useEffect(() => {
+      if (vendors.length == 0) {
+        setVendors(vendors);
+      } else if (shuffle) {
+        setVendors(fisherYatesShuffle([...vendors]));
+      } else {
+        setVendors(vendors);
+      }
+    }, [shuffle, vendors]);
 
   const filteredVendors = query
-    ? vendors.filter(vendor => vendor.name.toLowerCase().includes(query.toLowerCase()))
-    : vendors;
+    ? vendorsState.filter(vendor => vendor.name.toLowerCase().includes(query.toLowerCase()))
+    : vendorsState;
 
   return (
     <section className={`${styles["vendorSection"]} flex-1 flex flex-col justify-center`} >

@@ -53,3 +53,19 @@ export const getVendorDishes = (dishes, vendorID) => {
     }
     return eachVendorDishes
 }
+
+/**
+ * Shuffles the elements in an array using the Fisher Yates Algorithm
+ * @param {*} arr Unshuffled array
+ */
+export const fisherYatesShuffle = (arr) => {
+    const n = arr.length; // Length of array
+  
+    for (let i = n - 1; i > 0; i--) {
+      const k = Math.floor(Math.random() * i); // Return an int from [0, i)
+      [arr[k], arr[i]] = [arr[i], arr[k]]; // Swap random element with last element
+    }
+    
+    return arr
+}
+  
