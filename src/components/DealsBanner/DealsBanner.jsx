@@ -10,7 +10,7 @@ function DealsBanner() {
       {/* Left: back button and title */}
       <div className="flex flex-col items-start gap-3">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/")}
           className="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md"
         >
           <IoArrowBackOutline className="text-2xl text-black" />

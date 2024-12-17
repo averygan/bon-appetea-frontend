@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { calcMaxDiscount } from '../../utils/utils'
 
 function BottomBanner({text, endpoint, mb = "0px", bgColor="#FFF7FC", img="paupau-money", children}) {
 
