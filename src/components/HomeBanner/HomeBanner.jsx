@@ -9,7 +9,7 @@ function HomeBanner() {
         <ul>
         <li className={styles["banner-row"]}>
             <Link to="/deals">
-              <img src="/assets/images/banner-offers.png" alt="Offers"/>Offers
+              <img src="/assets/images/banner-offers.png" alt="Offers"/>panda close
             </Link>
           </li>
           <li className={styles["banner-row"]}><img src="/assets/images/banner-meal.png"  alt="Meal for One"/>Meal for one</li>

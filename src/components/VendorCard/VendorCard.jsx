@@ -1,13 +1,17 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { React, useContext } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { IoMdTime } from 'react-icons/io';
 import { MdPedalBike } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { DishContext } from '../../contexts/DishContext';
 import { VendorContext } from '../../contexts/VendorContext';
 import styles from './VendorCard.module.css';
+import Badge from '../Badge/Badge';
+import { calcMaxDiscount } from '../../utils/utils';
 
-function VendorCard({ text, query = "" }) {
+function VendorCard({ text, query = "", loadBadge }) {
   const { vendors } = useContext(VendorContext);
+  const { dishes } = useContext(DishContext)
 
   const filteredVendors = query
     ? vendors.filter(vendor => vendor.name.toLowerCase().includes(query.toLowerCase()))
@@ -20,11 +24,18 @@ function VendorCard({ text, query = "" }) {
         filteredVendors.map(vendor => (
           <Link className="flex-1" key={vendor.id} to={"/vendors/" + vendor.id}>
             <article className={styles["vendorCard"]}>
-              <img 
-                src={`${vendor.listing}?width=400&height=225`} 
-                alt={vendor.name} 
-                loading="lazy" 
-              />
+                <div className="relative">
+                    <img 
+                        src={`${vendor.listing}?width=400&height=225`} 
+                        alt={vendor.name} 
+                        loading="lazy" 
+                    />
+                    {loadBadge && (
+                        <div className="absolute top-2 right-2">
+                            <Badge text={`${calcMaxDiscount(dishes, vendor.id) * 100}% closing deal`} />
+                        </div>
+                    )}
+                </div>
               <section>
                 <div className={styles["vendorTitle"]}>
                   <h2>{vendor.name}</h2>

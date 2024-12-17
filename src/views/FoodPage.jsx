@@ -14,7 +14,7 @@ function FoodPage() {
       <ShopTopBar bgColor="#F70170" locColor="#FFFFFF" searchColor="#FFFFFF" setQuery={setQuery} query={query}/>
       <HomeBanner/>
       <FilterBar/>
-      <VendorCard text="Explore restaurants" query={query}/>
+      <VendorCard text="Explore restaurants" query={query} loadBadge={false}/>
       <BottomBanner text="Hurry! Limited time offer" endpoint="/deals" mb="90px">
         <>Save <span className="text-pink-600">50% off</span> closing deals</>
       </BottomBanner>

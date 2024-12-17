@@ -6,7 +6,7 @@ function DealsBanner() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative bg-pink-50 py-6 px-[3vw] flex items-start">
+    <div className="relative bg-pink-50 py-4 px-[3vw] flex items-start">
       {/* Left: back button and title */}
       <div className="flex flex-col items-start gap-3">
         <button
@@ -15,7 +15,8 @@ function DealsBanner() {
         >
           <IoArrowBackOutline className="text-2xl text-black" />
         </button>
-        <h1 className="text-2xl font-bold text-black">Closing Deals</h1>
+        <h1 className="text-2xl font-bold text-black">pandaclose</h1>
+        <p className="text-sm">Closing deals, close by</p>
       </div>
 
       {/* Right: Pau pau banner image */}

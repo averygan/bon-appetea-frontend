@@ -7,7 +7,7 @@ function DealsView({ view }) {
     <div>
       {view === "list" ? (
         <>
-          <VendorCard />
+          <VendorCard loadBadge={true}/>
         </>
       ) : (
         <div className="flex flex-col h-screen">
