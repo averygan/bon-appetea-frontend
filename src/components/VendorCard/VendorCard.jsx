@@ -7,7 +7,7 @@ import { DishContext } from '../../contexts/DishContext';
 import { VendorContext } from '../../contexts/VendorContext';
 import styles from './VendorCard.module.css';
 import Badge from '../Badge/Badge';
-import { calcMaxDiscount, fisherYatesShuffle } from '../../utils/utils';
+import { calcMaxDiscount } from '../../utils/utils';
 
 function VendorCard({ text, query = "", loadBadge, shuffle=false }) {
   const { vendors } = useContext(VendorContext);
@@ -19,7 +19,9 @@ function VendorCard({ text, query = "", loadBadge, shuffle=false }) {
       if (vendors.length == 0) {
         setVendors(vendors);
       } else if (shuffle) {
-        setVendors(fisherYatesShuffle([...vendors]));
+        const vendorsCopy = [...vendors];  // Create a shallow copy of the vendors array
+        [vendorsCopy[0], vendorsCopy[4]] = [vendorsCopy[4], vendorsCopy[0]]; 
+        setVendors(vendorsCopy);
       } else {
         setVendors(vendors);
       }
