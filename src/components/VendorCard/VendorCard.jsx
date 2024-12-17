@@ -29,14 +29,14 @@ function VendorCard({text}) {
                             </div>
                             <div className={styles["vendorDelivery"]}> 
                                 <IoMdTime />{vendor.deliveryTime} &#8226;  
-                                {vendor.deliveryFee === "0" ? 
+                                {vendor.deliveryFee === 0 ? 
                                 <span className={styles["active"]}>
                                     <MdPedalBike /> <p>Free</p>
                                 </span>
                                 : 
                                 <span>
                                     <MdPedalBike />
-                                    <p>{"S$" + vendor.deliveryFee}</p>
+                                    <p>{"S$" + vendor.deliveryFee.toFixed(2)}</p>
                                 </span>}
                             </div>                             
                         </section>
