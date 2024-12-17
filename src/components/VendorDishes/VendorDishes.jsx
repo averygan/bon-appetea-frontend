@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DishCard from '../DishCard/DishCard'; 
 import { FaFire } from 'react-icons/fa6';
 
-function VendorDishes({ id }) {
+function VendorDishes({ id, searchQuery }) {
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -25,6 +25,10 @@ function VendorDishes({ id }) {
     fetchDishes();
   }, [id]);
 
+  const filteredDishes = searchQuery
+    ? dishes.filter(dish => dish.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    : dishes;
+
   return (
     <div>
       <h2 className="text-xl font-semibold mt-5 mb-2 flex items-center">
@@ -35,16 +39,21 @@ function VendorDishes({ id }) {
         <p className="text-center text-gray-500">Loading...</p>
       ) : error ? (
         <p className="text-center text-red-500">{error}</p>
-      ) : dishes.length > 0 ? (
+      ) : filteredDishes.length > 0 ? (
         <div className="grid grid-cols-1 gap-2">
-          {dishes.map(dish => (
+          {filteredDishes.map(dish => (
             <DishCard key={dish.id} dish={dish} />
           ))}
         </div>
       ) : (
-        <p className="col-span-full text-center text-gray-500">
-          No dishes available for this vendor, check back later!
-        </p>
+        <div className="col-span-full text-center mt-10">
+          <img 
+            src="/assets/images/paupau-wink.png" 
+            alt="No dishes found" 
+            className="mx-auto w-40 h-40 object-contain"
+          />
+          <p className="text-gray-500 mt-4 text-base">No dishes found, try again</p>
+        </div>
       )}
     </div>
   );
