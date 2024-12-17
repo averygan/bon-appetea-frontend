@@ -11,7 +11,7 @@ function BottomBanner({text, endpoint, mb = "0px", bgColor="#FFF7FC", img="paupa
         style={{ bottom: mb, backgroundColor: bgColor}}>
           <section className="text-left">
               <h1 className="text-xl font-bold">{children}</h1>
-              <p className="text-pink-500 text-sm  font-bold mt-2">{text}</p>
+              <p className="text-pink-500 text-sm font-semibold mt-2">{text}</p>
           </section>
           <section className="flex justify-center items-center">
               <img 
