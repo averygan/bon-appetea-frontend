@@ -43,7 +43,7 @@ function DealsMap() {
             vendors.map(vendor => (
                 <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]} icon={customIcon(`discounts-${calcMaxDiscount(dishes, vendor.id)}`)}>
                     <Popup>
-                            <Link className={styles["popupContentWrapper"]} to={`/vendor/${vendor.id}`}>
+                            <Link className={styles["popupContentWrapper"]} to={`/vendors/${vendor.id}`}>
                                     <img src={vendor.listing + "?width=400&height=225"} alt={vendor.name}/>
                                     <section>
                                         <div className={styles["popupContentHeader"]}>
