@@ -4,7 +4,7 @@
 pandaclose is a sustainability-driven feature for a food delivery app that helps reduce food waste. It allows vendors to list closing deals on dishes nearing expiration. Consumers can explore these deals through a dedicated page or a map view, helping them decide whether to pick up orders or have them delivered. 
 
 <p align="center">
-  <img src="./assets/readme/paupau-closed.png" width="200" margin="auto">
+  <img src="./assets/readme/paupau-closed-frontend.png" width="200" margin="auto">
 </p>
 
 This repository contains the frontend implementation of the consumer experience built with React for our hackathon project focused on **sustainability and waste reduction**.
