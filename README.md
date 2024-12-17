@@ -18,11 +18,9 @@ This repository contains the frontend implementation of the consumer experience 
 1. [UI/UX](#uiux)
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
-4. [Installation](#installation--setup)
+4. [Installation and Setu](#installation--setup)
 5. [Usage](#usage)
 6. [Folder Structure](#folder-structure)
-7. [Credits](#credits)
-8. [References](#references)
 
 ## UI/UX
 
@@ -118,6 +116,11 @@ Ensure you have `Node.js` and `npm` installed, then run
 - **Vendor Pages**  
   Access individual vendor pages to view specific dishes, offers, and menus. Use the **search bar** to find dishes or vendors quickly.
 
+<div style="display: flex; justify-content: space-evenly; align-items: center;">
+  <img src="./assets/readme/list-view.gif" width="200" style="margin: 0 auto;">
+  <img src="./assets/readme/map-view.gif" width="200" style="margin: 0 auto;">
+</div>
+
 ### Key Features
 1. **Filter & Search**: Easily search for vendors or dishes.  
 2. **Map Integration**: Visualize nearby deals with Leaflet-powered interactive maps.  
@@ -152,5 +155,3 @@ bon-appetea-frontend
 │── tailwind.config.js # Tailwind CSS configuration 
 └── vite.config.js # Vite configuration file
 ```
-
-## References
