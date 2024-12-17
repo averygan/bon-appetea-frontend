@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-// import { DataContext } from '../../contexts/DataContext';
 import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
-import CartButton from '../CartButton/CartButton';
+import { TbShoppingBag } from 'react-icons/tb'
 import { VendorContext } from '../../contexts/VendorContext';
 
 function VendorTopBar({ id }) {
@@ -31,8 +30,8 @@ function VendorTopBar({ id }) {
                     </div>
                 )}
 
-                <CartButton/>
-            </div>
+            <TbShoppingBag className="text-2xl" />
+        </div>
 
             {/* vendor information */}
             {vendor && (
