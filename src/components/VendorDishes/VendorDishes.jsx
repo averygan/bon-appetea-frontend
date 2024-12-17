@@ -30,7 +30,7 @@ function VendorDishes({ id, searchQuery }) {
     : dishes;
 
   return (
-    <div>
+    <div className="flex-1 flex flex-col">
       <h2 className="text-xl font-semibold mt-5 mb-2 flex items-center">
         <FaFire className="mr-2" style={{ color: '#D70F64' }} />
         Closing Deals
@@ -46,7 +46,7 @@ function VendorDishes({ id, searchQuery }) {
           ))}
         </div>
       ) : (
-        <div className="col-span-full text-center mt-10">
+        <div className="col-span-full text-center flex-1 flex flex-col justify-center">
           <img 
             src="/assets/images/paupau-wink.png" 
             alt="No dishes found" 
