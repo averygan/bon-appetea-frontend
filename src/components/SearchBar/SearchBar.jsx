@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoSearch } from 'react-icons/io5';
 
-function SearchBar({placeholder, bgColor}) {
+function SearchBar({placeholder, bgColor, caretColor="#F70170"}) {
   return (
     <div className={`relative flex items-center w-full border-none rounded-3xl`}
           style={{backgroundColor: bgColor}}>
@@ -9,7 +9,10 @@ function SearchBar({placeholder, bgColor}) {
       <input
         type="text"
         placeholder={placeholder}
-        className={`w-full py-1.5 pl-2 bg-transparent border-none rounded-3xl placeholder:text-sm focus:outline-none placeholder-[#666769]`}
+        className={` w-full py-1.5 pl-2 bg-transparent border-none rounded-3xl placeholder:text-sm focus:outline-none placeholder-[#666769]`}
+        style={{
+          caretColor
+        }}
       />
     </div>
   );
