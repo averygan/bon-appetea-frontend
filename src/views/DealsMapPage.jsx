@@ -8,7 +8,9 @@ function DealsMapPage() {
     <main className="flex flex-col h-screen">
       <MapTopBar/>
       <DealsMap/>
-      <BottomBanner  text="Click on any markers to find out more" bgColor="#ffffff" endpoint="/deals"/>
+      <BottomBanner  text="Tap markers for more info" bgColor="#ffffff" endpoint="/deals">
+        <>Up to <span className="text-pink-600">50% off</span> closing deals</>
+      </BottomBanner>
     </main>
   )
 }

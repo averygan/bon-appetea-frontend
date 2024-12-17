@@ -1,12 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import DishCard from '../DishCard/DishCard'; 
 import { FaFire } from 'react-icons/fa6';
-import { DishContext } from '../../contexts/DishContext';
 
 function VendorDishes({ id }) {
-  const { dishes } = useContext(DishContext)
+  const [dishes, setDishes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const filteredDishes = dishes?.filter(dish => String(dish.vendorID) === String(id)) || [];
+  useEffect(() => {
+    async function fetchDishes() {
+      try {
+        const response = await fetch(`http://localhost:8080/dishes/vendors/${id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch dishes');
+        }
+        const data = await response.json();
+        setDishes(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchDishes();
+  }, [id]);
 
   return (
     <div>
@@ -14,17 +31,21 @@ function VendorDishes({ id }) {
         <FaFire className="mr-2" style={{ color: '#D70F64' }} />
         Closing Deals
       </h2>
-      <div className="grid grid-cols-1 gap-2">
-        {filteredDishes.length > 0 ? (
-          filteredDishes.map(dish => (
+      {loading ? (
+        <p className="text-center text-gray-500">Loading...</p>
+      ) : error ? (
+        <p className="text-center text-red-500">{error}</p>
+      ) : dishes.length > 0 ? (
+        <div className="grid grid-cols-1 gap-2">
+          {dishes.map(dish => (
             <DishCard key={dish.id} dish={dish} />
-          ))
-        ) : (
-          <p className="col-span-full text-center text-gray-500">
-            No dishes available for this vendor.
-          </p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <p className="col-span-full text-center text-gray-500">
+          No dishes available for this vendor, check back later!
+        </p>
+      )}
     </div>
   );
 }
