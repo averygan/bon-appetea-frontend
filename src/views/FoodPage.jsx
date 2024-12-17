@@ -13,7 +13,9 @@ function FoodPage() {
       <HomeBanner/>
       <FilterBar/>
       <VendorCard/>
-      <BottomBanner text="Hurry! Limited time offer" endpoint="/deals" mb="90px"/>
+      <BottomBanner text="Hurry! Limited time offer" endpoint="/deals" mb="90px">
+        <>Save <span className="text-pink-600">50% off</span> closing deals</>
+      </BottomBanner>
       <BottomNavBar/>
     </>
   )

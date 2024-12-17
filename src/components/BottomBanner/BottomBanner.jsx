@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { DishContext } from '../../contexts/DishContext'
 import { calcMaxDiscount } from '../../utils/utils'
 
-function BottomBanner({text, endpoint, mb = "0px", bgColor="#FFF7FC", img="paupau-money"}) {
-  let { dishes } = useContext(DishContext)
+function BottomBanner({text, endpoint, mb = "0px", bgColor="#FFF7FC", img="paupau-money", children}) {
 
   return (
       <Link 
@@ -12,10 +10,8 @@ function BottomBanner({text, endpoint, mb = "0px", bgColor="#FFF7FC", img="paupa
         className={`flex items-center justify-center py-5 px-8 gap-3 border-t border-gray-300 sticky`}
         style={{ bottom: mb, backgroundColor: bgColor}}>
           <section className="text-left">
-              <h1 className="text-xl font-bold">Save <span className="text-pink-600">
-                {calcMaxDiscount(dishes)*100}% off
-                </span> closing deals</h1>
-              <p className="text-pink-500 text-sm  mt-2">{text}</p>
+              <h1 className="text-xl font-bold">{children}</h1>
+              <p className="text-pink-500 text-sm  font-bold mt-2">{text}</p>
           </section>
           <section className="flex justify-center items-center">
               <img 
