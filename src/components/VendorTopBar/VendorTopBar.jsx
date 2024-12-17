@@ -3,6 +3,9 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import { TbShoppingBag } from 'react-icons/tb'
 import { VendorContext } from '../../contexts/VendorContext';
+import { IoMdTime } from 'react-icons/io';
+import { MdPedalBike } from 'react-icons/md';
+import { FaStar } from 'react-icons/fa';
 
 function VendorTopBar({ id }) {
     const { vendors } = useContext(VendorContext)
@@ -38,13 +41,14 @@ function VendorTopBar({ id }) {
                 <div className="mt-2 text-center">
                     <h1 className="text-sm font-bold">{vendor.name}</h1>
                     <div className="flex justify-center mt-1 items-center text-xs text-gray-500">
-                        <span>{vendor.deliveryTime}</span>
-                        <span className="mx-1">•</span>
-                        <span className="text-pink-500 font-medium">
-                            {vendor.deliveryFee === "0" ? 'Free delivery' : `$${vendor.deliveryFee}`}
+                        <span className="flex items-center"><IoMdTime className="mr-[3px]"/>{vendor.deliveryTime}</span>
+                        <span className="mx-1">&#8226;</span>
+                        <span className={`flex items-center font-medium ${vendor.deliveryFee === 0 ? 'text-pink-500' : 'text-gray-500'}`}>
+                            <MdPedalBike className="mr-[3px]"/>
+                            {vendor.deliveryFee === 0 ? 'Free delivery' : `$${vendor.deliveryFee.toFixed(2)}`}
                         </span>
-                        <span className="mx-1">•</span>
-                        <span className="text-yellow-500 font-medium">{vendor.ratings}</span>
+                        <span className="mx-1">&#8226;</span>
+                        <span className="font-medium flex items-center text-black font-[500]"><FaStar className="text-yellow-500 mr-[3px]"/>{vendor.ratings}</span>
                         <span className="ml-1 text-gray-500">({vendor.noOfReviews} ratings)</span>
                     </div>
                 </div>

@@ -17,10 +17,6 @@
     padding: 2vh 5vw;
 }
 
-.popupContent {
-    margin: 0 5vw;
-}
-
 .popupContent,
 .popupContentHeader {
     width: 100%;
@@ -29,6 +25,11 @@
     white-space: nowrap;
     align-items: center;
     color: black;
+}
+
+.popupContent {
+    margin: 0 5vw;
+    color: #333333;
 }
 
 .popupContentHeader h1{
@@ -74,11 +75,12 @@
    color: #F80070;
 }
 
-.popupContentDelivery .active p {
-    font-weight: bold;
-}
-
 .popupContentDelivery svg {
     margin-right: 3px;
     margin-left: 3px;
+}
+
+.popupContentWrapper .popupContentRating {
+    font-weight: 500;
+    margin-right: 3px;
 }

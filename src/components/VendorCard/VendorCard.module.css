@@ -39,10 +39,15 @@
     align-items: center;
 }
 
+.vendorTitle h2,
+.vendorTitle p {
+    font-weight: 500;
+}
+
 .vendorTitle h2 {
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 500;
+
     margin-right: 10px;
 }
 

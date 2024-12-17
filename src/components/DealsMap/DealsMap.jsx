@@ -55,7 +55,7 @@ function DealsMap() {
                                                 closing deal
                                             </h1>
                                             <div>
-                                                <FaStar /> <p>{vendor.ratings} <span>({vendor.noOfReviews})</span></p>
+                                                <FaStar /> <p className={styles["popupContentRating"]}>{vendor.ratings}</p> <span>({vendor.noOfReviews})</span>
                                             </div>    
                                         </div>
                                         <div className={styles["popupContentName"]}>
