@@ -74,11 +74,10 @@
    color: #F80070;
 }
 
-.vendorDelivery .active p {
-    font-weight: bold;
-}
-
 .vendorDelivery svg {
     margin-right: 3px;
+}
+
+.vendorDelivery span {
     margin-left: 3px;
 }

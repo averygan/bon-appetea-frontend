@@ -1,21 +1,23 @@
 import React, { useContext } from 'react';
-import { DataContext } from '../../contexts/DataContext';
 import { IoArrowBackOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom';
-import CartButton from '../CartButton/CartButton';
+import { useNavigate } from 'react-router-dom';
+import { TbShoppingBag } from 'react-icons/tb'
+import { VendorContext } from '../../contexts/VendorContext';
 
 function VendorTopBar({ id }) {
-    const { vendors } = useContext(DataContext);
-    const vendor = vendors.find(vendor => vendor.id === id);
+    const { vendors } = useContext(VendorContext)
+    const navigate = useNavigate();
+
+    const vendor = vendors.find(vendor => String(vendor.id) === String(id))
 
     return (
         <div className="bg-white py-3 my-2">
             {/* container for back button, logo, cart */}
             <div className="flex items-center justify-between">
                 {/* back */}
-                <Link to="/" className="flex items-center">
+                <button onClick={() => navigate(-1)} className="flex items-center">
                     <IoArrowBackOutline className="text-2xl" />
-                </Link>
+                </button>
 
                 {/* vendor logo */}
                 {vendor && (
@@ -28,18 +30,18 @@ function VendorTopBar({ id }) {
                     </div>
                 )}
 
-                <CartButton/>
-            </div>
+            <TbShoppingBag className="text-2xl" />
+        </div>
 
             {/* vendor information */}
             {vendor && (
                 <div className="mt-2 text-center">
                     <h1 className="text-sm font-bold">{vendor.name}</h1>
                     <div className="flex justify-center mt-1 items-center text-xs text-gray-500">
-                        <span className="mr-2">{vendor.deliveryTime}</span>
+                        <span>{vendor.deliveryTime}</span>
                         <span className="mx-1">•</span>
                         <span className="text-pink-500 font-medium">
-                            {vendor.deliveryFee === 0 ? 'Free delivery' : `$${vendor.deliveryFee}`}
+                            {vendor.deliveryFee === "0" ? 'Free delivery' : `$${vendor.deliveryFee}`}
                         </span>
                         <span className="mx-1">•</span>
                         <span className="text-yellow-500 font-medium">{vendor.ratings}</span>

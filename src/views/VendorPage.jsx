@@ -5,13 +5,13 @@ import SearchBar from '../components/SearchBar/SearchBar'
 import VendorDishes from '../components/VendorDishes/VendorDishes'
 
 function VendorPage() {
-    let { vendor_id } = useParams()
+    let { vendorID } = useParams()
 
   return (
     <div className="px-4">
-      <VendorTopBar id={vendor_id}/>
-      <SearchBar placeholder="Search" bgColor="bg-gray-100"/>
-      <VendorDishes id={vendor_id}/>
+      <VendorTopBar id={vendorID}/>
+      <SearchBar placeholder="Search" bgColor="#F0F0F0"/>
+      <VendorDishes id={vendorID}/>
     </div>
   )
 }

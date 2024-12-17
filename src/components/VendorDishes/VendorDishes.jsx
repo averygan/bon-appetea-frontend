@@ -6,7 +6,7 @@ import { DishContext } from '../../contexts/DishContext';
 function VendorDishes({ id }) {
   const { dishes } = useContext(DishContext)
 
-  const filteredDishes = dishes?.filter(dish => ("vn" + dish.vendorID) === id) || [];
+  const filteredDishes = dishes?.filter(dish => String(dish.vendorID) === String(id)) || [];
 
   return (
     <div>
