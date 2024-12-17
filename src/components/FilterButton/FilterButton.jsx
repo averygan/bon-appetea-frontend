@@ -6,7 +6,7 @@ function FilterButton({label, isActive, onClick}) {
 
     const handleClick = () => {
         if (label === "Nearby Deals") {
-            navigate("/deals/map")
+            navigate("/deals")
         } else {
             onClick()
         }
