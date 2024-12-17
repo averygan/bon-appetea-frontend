@@ -8,7 +8,7 @@ function DealsListPage() {
     <>
         <DealsBanner/>
         <VendorCard/>
-        <BottomBanner text="Tap here for map view" img="paupau-gift"/>
+        <BottomBanner text="Tap here for map view" img="paupau-gift" bgColor="#ffffff" endpoint="/deals/map"/>
     </>
   )
 }
