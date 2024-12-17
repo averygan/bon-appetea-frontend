@@ -6,7 +6,7 @@ function ToggleSwitch({ selected, setSelected }) {
   };
 
   return (
-  <div className="flex px-2 py-2 mx-auto justify-between mx-[21vw]">
+  <div className="flex px-[21vw] py-2 mx-auto justify-between mx-[21vw]">
     <button
       onClick={() => handleToggle('list')}
       className={`text-center py-1 text-base font-bold relative ${
