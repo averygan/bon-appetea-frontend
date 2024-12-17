@@ -18,15 +18,19 @@ export const capitalize = (sentence) => {
 
 
 /**
- * Calculates the highest discount offered by each vendor
+ * Calculates the highest discount offered
  * @param {array} dishes array of dishes (for each vendor)
- * @param {int} vendorID ID of each vendor
+ * @param {int} vendorID ID of each vendor - nullable field
  * @returns {float} highest discount (in decimal)
  */
 export const calcMaxDiscount = (dishes, vendorID) => {
-    let eachVendorDishes = getVendorDishes(dishes, vendorID)
+    let filteredDishes = 
+        vendorID !== undefined ? 
+        getVendorDishes(dishes, vendorID) :
+        dishes;
+    
     let max = 0;
-    for (let eachDish of eachVendorDishes) {
+    for (let eachDish of filteredDishes) {
         if (eachDish.discount > max) {
             max = eachDish.discount
         }

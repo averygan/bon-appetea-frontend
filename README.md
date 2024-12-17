@@ -1,2 +1,2 @@
-# Closing Deals (foodpanda hackathon)
+# Closing Deals (foodpanda Hackathon)
 
