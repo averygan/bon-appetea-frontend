@@ -6,7 +6,7 @@ function DealsBanner() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative bg-pink-50 py-6 mb-4 px-[3vw] flex items-start">
+    <div className="relative bg-pink-50 py-6 px-[3vw] flex items-start">
       {/* Left: back button and title */}
       <div className="flex flex-col items-start gap-3">
         <button

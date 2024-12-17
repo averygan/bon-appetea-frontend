@@ -20,6 +20,7 @@ import DealsListPage from './views/DealsListPage';
 import DealsMapPage from './views/DealsMapPage';
 import VendorContextProvider from './contexts/VendorContext';
 import DishContextProvider from './contexts/DishContext';
+import DealsPage from './views/DealsPage';
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
               <Route path="/search" element={<SearchPage/>}/>
               <Route path="/cart" element={<CartPage/>}/>
               <Route path="/account" element={<AccountPage/>}/>
-              <Route path="/deals" element={<DealsListPage/>}/>
+              <Route path="/deals" element={<DealsPage/>}/>
               <Route path="/deals/map" element={<DealsMapPage/>}/>
               <Route path="*" element={<NotFoundPage/>} />
             </Routes>
