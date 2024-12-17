@@ -11,13 +11,16 @@ import { Link } from 'react-router-dom';
 import { IoMdTime } from 'react-icons/io';
 import { MdPedalBike } from 'react-icons/md';
 import { FaStar } from 'react-icons/fa';
+import { DataContext } from '../../contexts/DataContext';
 
 function DealsMap() {
     const LEAFLET_ACCESS_TOKEN = import.meta.env.VITE_LEAFLET_ACCESS_TOKEN
     let { location } = useContext(LocationContext)
-    let { vendors } = useContext(VendorContext)
+    // let { vendors } = useContext(VendorContext)
     let { dishes } = useContext(DishContext)
     let userPosition = [location.lat, location.lng]
+
+    let { vendors } = useContext(DataContext)
 
     const customIcon = (entity) => {
         return new Icon({
@@ -41,42 +44,47 @@ function DealsMap() {
         </Marker>
         { vendors.length > 0 && 
             vendors.map(vendor => (
-                <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]} icon={customIcon(`discounts-${calcMaxDiscount(dishes, vendor.id)}`)}>
+                // <Marker key={vendor.id} position={[vendor.latitude, vendor.longitude]} icon={customIcon(`discounts-${calcMaxDiscount(dishes, vendor.id)}`)}>
+                //     <Popup>
+                //             <Link className={styles["popupContentWrapper"]} to={`/vendors/${vendor.id}`}>
+                //                     <img src={vendor.listing + "?width=400&height=225"} alt={vendor.name}/>
+                //                     <section>
+                //                         <div className={styles["popupContentHeader"]}>
+                //                             <h1>
+                //                                 {calcMaxDiscount(dishes, vendor.id) > 0 ?
+                //                                 <span className={styles["active"]}>{calcMaxDiscount(dishes, vendor.id)*100}% off </span> :
+                //                                 <span>No </span>
+                //                                 }
+                //                                 closing deal
+                //                             </h1>
+                //                             <div>
+                //                                 <FaStar /> <p className={styles["popupContentRating"]}>{vendor.ratings}</p> <span>({vendor.noOfReviews})</span>
+                //                             </div>    
+                //                         </div>
+                //                         <div className={styles["popupContentName"]}>
+                //                             @ {vendor.name}
+                //                         </div>
+                //                         <div className={styles["popupContentDelivery"]}>
+                //                             {vendor.cuisine} &#8226;
+                //                             <IoMdTime />{vendor.deliveryTime} &#8226;  
+                //                             {vendor.deliveryFee === 0 ? 
+                //                             <span className={styles["active"]}>
+                //                                 <MdPedalBike /> <p>Free</p>
+                //                             </span>
+                //                             : 
+                //                             <span>
+                //                                 <MdPedalBike />
+                //                                 <p>{"S$" + vendor.deliveryFee.toFixed(2)}</p>
+                //                             </span>}
+                //                         </div>
+                //                     </section>
+                //                 </Link>
+                //             </Popup>
+                // </Marker>
+                <Marker position={[vendor.coordinates[0], vendor.coordinates[1]]}>
                     <Popup>
-                            <Link className={styles["popupContentWrapper"]} to={`/vendors/${vendor.id}`}>
-                                    <img src={vendor.listing + "?width=400&height=225"} alt={vendor.name}/>
-                                    <section>
-                                        <div className={styles["popupContentHeader"]}>
-                                            <h1>
-                                                {calcMaxDiscount(dishes, vendor.id) > 0 ?
-                                                <span className={styles["active"]}>{calcMaxDiscount(dishes, vendor.id)*100}% off </span> :
-                                                <span>No </span>
-                                                }
-                                                closing deal
-                                            </h1>
-                                            <div>
-                                                <FaStar /> <p className={styles["popupContentRating"]}>{vendor.ratings}</p> <span>({vendor.noOfReviews})</span>
-                                            </div>    
-                                        </div>
-                                        <div className={styles["popupContentName"]}>
-                                            @ {vendor.name}
-                                        </div>
-                                        <div className={styles["popupContentDelivery"]}>
-                                            {vendor.cuisine} &#8226;
-                                            <IoMdTime />{vendor.deliveryTime} &#8226;  
-                                            {vendor.deliveryFee === 0 ? 
-                                            <span className={styles["active"]}>
-                                                <MdPedalBike /> <p>Free</p>
-                                            </span>
-                                            : 
-                                            <span>
-                                                <MdPedalBike />
-                                                <p>{"S$" + vendor.deliveryFee.toFixed(2)}</p>
-                                            </span>}
-                                        </div>
-                                    </section>
-                                </Link>
-                            </Popup>
+                        {vendor.name}
+                    </Popup>
                 </Marker>
             ))
 
