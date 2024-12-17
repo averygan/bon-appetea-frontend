@@ -116,7 +116,7 @@ Ensure you have `Node.js` and `npm` installed, then run
 - **Vendor Pages**  
   Access individual vendor pages to view specific dishes, offers, and menus. Use the **search bar** to find dishes or vendors quickly.
 
-<div style="display: flex; justify-content: space-evenly; align-items: center;">
+<div style="display: flex; justify-content: space-evenly; align-items: center;" align="center">
   <img src="./assets/readme/list-view.gif" width="200" style="margin: 0 auto;">
   <img src="./assets/readme/map-view.gif" width="200" style="margin: 0 auto;">
 </div>
