@@ -65,7 +65,7 @@ To run the frontend locally, follow these steps:
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/averygan/bon-appetea-frontend.git
+   git clone https://github.com/averygan/bon-appetea-frontend.git pandaclose-frontend
    cd pandaclose-frontend
 
 2. **Set Up Environment Variables**
