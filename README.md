@@ -18,7 +18,7 @@ This repository contains the frontend implementation of the consumer experience 
 1. [UI/UX](#uiux)
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
-4. [Installation and Setu](#installation--setup)
+4. [Installation and Setup](#installation--setup)
 5. [Usage](#usage)
 6. [Folder Structure](#folder-structure)
 
